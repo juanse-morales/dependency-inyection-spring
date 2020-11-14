@@ -16,19 +16,20 @@ public class DependencyInyectionApplication {
 	
 	private static final Logger log = LoggerFactory.getLogger(DependencyInyectionApplication.class);
 
-	@Bean
+	
+	/* @Bean
 	public String getApplicationName() {
 		return "DCA";
-	}
+	} */
 	
-	@Bean(initMethod = "init", destroyMethod = "destroy")
+	/* @Bean(initMethod = "init", destroyMethod = "destroy")
 	public ExplicitBean getBean() {
 		return new ExplicitBean();
-	}
+	} */
 	
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
-		LifeCycleBean bean = context.getBean(LifeCycleBean.class);
+		//LifeCycleBean bean = context.getBean(LifeCycleBean.class);
 		
 	}
 
