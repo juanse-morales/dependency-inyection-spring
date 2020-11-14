@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import com.dca.di.autowire.AreaCalculatorService;
+
 @SpringBootApplication
 public class DependencyInyectionApplication {
 
@@ -21,9 +23,9 @@ public class DependencyInyectionApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
 		
-		String nombreAplicacion = context.getBean(String.class);
+		AreaCalculatorService calculator = context.getBean(AreaCalculatorService.class);
 		
-		log.info("Nombre aplicación {} ", nombreAplicacion);
+		log.info("Area total: {} ", calculator.calcAreas());
 		
 		context.close();
 	}
