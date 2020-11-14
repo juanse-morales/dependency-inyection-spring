@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import com.dca.di.lifecycle.ExplicitBean;
 import com.dca.di.lifecycle.LifeCycleBean;
 
 @SpringBootApplication
@@ -18,6 +19,11 @@ public class DependencyInyectionApplication {
 	@Bean
 	public String getApplicationName() {
 		return "DCA";
+	}
+	
+	@Bean(initMethod = "init", destroyMethod = "destroy")
+	public ExplicitBean getBean() {
+		return new ExplicitBean();
 	}
 	
 	public static void main(String[] args) {
