@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy(false)
+@Lazy
 public class LifeCycleBean implements BeanNameAware, InitializingBean, DisposableBean{
 
 	private static final Logger log = LoggerFactory.getLogger(LifeCycleBean.class);

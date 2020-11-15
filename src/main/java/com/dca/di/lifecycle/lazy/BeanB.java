@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy(false)
+@Lazy
 public class BeanB {
 	
 	@Autowired
